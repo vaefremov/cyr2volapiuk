@@ -45,7 +45,7 @@ func String(s string) string {
 }
 
 // StringPermissive is similar to String, but it does not replace unhandled
-// characters with underscore, this chares are passed as they are.
+// characters with underscore, this chars are passed through as they are.
 func StringPermissive(s string) string {
 	var b strings.Builder
 	for _, r := range s {
@@ -61,7 +61,7 @@ func StringPermissive(s string) string {
 
 // FileName is aimed at being used to generate file names from plain text strings.
 // These file names can be safely used in the cases where the underlying file system either does not
-// support Cyrillic (or Unicode) encoding, or when using Cyrillic letters in file names
+// support Cyrillic (or other non-ASCII Unicode characters) encoding, or when using Cyrillic letters in file names
 // may cause problems. Also, only "safe" non-letter characters are left,
 // list of these safe characters is available through the AllowedInFilenames constant.
 func FileName(s string) string {
